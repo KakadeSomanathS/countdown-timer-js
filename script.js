@@ -5,11 +5,11 @@ const pauseBtn = document.querySelector("#pauseBtn");
 const resumeBtn = document.querySelector("#resumeBtn");
 const stopTimer = document.querySelector("#stopTimer");
 let valueSeconds;
-
+let timer;
 
 function countDown() {
   valueSeconds = parseInt(timerInput.value);
-  console.log(valueSeconds);
+  console.log(  );
 
   if (isNaN(valueSeconds)) {
     countDownDisplay.innerText = `Please Enter valid Value`;
@@ -20,7 +20,7 @@ function countDown() {
     // return;
   }
 
-  const timer = setInterval(function () {
+   timer = setInterval(function () {
     valueSeconds--;
     countDownDisplay.innerText = `Time remaining:${valueSeconds} seconds`;
 
@@ -31,15 +31,24 @@ function countDown() {
   }, 1000);
 }
 function pauseTimer() {
-  clearInterval(valueSeconds);
-  countDownDisplay.textContent = valueSeconds;
+  clearInterval(timer);
+  countDownDisplay.textContent = `Time remaining:${valueSeconds} seconds`;
 }
 function resumeTimer() {
+  timer = setInterval(function () {
+    valueSeconds--;
+    countDownDisplay.innerText = `Time remaining:${valueSeconds} seconds`;
+
+    if (valueSeconds <= 0) {
+      clearInterval(timer);
+      countDownDisplay.textContent = `Times Up ⌚`;
+    }
+  }, 1000);
   console.log("resume timer");
 }
 function stopTimerForever() {
-  clearInterval(timer)
-  countDownDisplay.textContent = 0;
+  clearInterval(timer);
+  countDownDisplay.innerText = ``
 }
 startBtn.addEventListener("click", countDown);
 pauseBtn.addEventListener("click", pauseTimer);
