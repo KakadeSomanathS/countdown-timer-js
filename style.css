@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #b5f5ec;
+}
+section{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#startButton{
+  border-radius: 7px;
+  padding: 7px 10px;
+  background-color:#8c8c8c;
+  color: #fff;
+  border: none;
+}
+#timerInput{
+  border-radius: 7px;
+  padding: 6px 10px;
+  /* width: 100%; */
+  /* max-width: 300px; */
+  border: 1px solid #8c8c8c;
+}
+#countDownDisplay{
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+.btn{
+  border: none;
+  border-radius: 7px;
+  background-color:#8c8c8c;
+  color: #fff;
+  min-width: 100px;
+}
